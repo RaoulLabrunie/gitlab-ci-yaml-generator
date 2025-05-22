@@ -3,7 +3,6 @@
 [![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://docker.com)
 [![GitLab](https://img.shields.io/badge/GitLab-FC6D26?style=for-the-badge&logo=gitlab&logoColor=white)](https://gitlab.com)
 [![Bash](https://img.shields.io/badge/Bash-4EAA25?style=for-the-badge&logo=gnu-bash&logoColor=white)](https://gnu.org/software/bash/)
-[![GPL] License](https://img.shields.io/badge/License-GPL-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/GPL)
 
 > **Automate GitLab CI/CD pipeline generation for multi-service Docker projects with intelligent dependency management and build optimization.**
 
@@ -227,10 +226,6 @@ DOCKER_BUILD_ARGS="--build-arg ENV=production"
 - [ ] **Test Integration**: Built-in testing pipeline stages
 - [ ] **Security Scanning**: Automated vulnerability assessment
 - [ ] **Deployment Stages**: Extended pipeline for deployment automation
-
-## 📄 License
-
-This project is licensed under the GPL v3 license. See [LICENSE](LICENSE) for more information.
 
 ---
 
