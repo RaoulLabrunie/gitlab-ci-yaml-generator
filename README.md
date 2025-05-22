@@ -208,25 +208,6 @@ DOCKER_BUILD_ARGS="--build-arg ENV=production"
 
 </details>
 
-## 📊 Performance Metrics
-
-### Before vs After Implementation
-
-| Metric               | Manual Pipeline | Generated Pipeline | Improvement         |
-| -------------------- | --------------- | ------------------ | ------------------- |
-| **Setup Time**       | Hours           | Minutes            | 🚀 95% reduction    |
-| **Build Efficiency** | All services    | Changed only       | 🎯 60-80% reduction |
-| **Maintenance**      | High            | Automated          | 🛠️ 90% reduction    |
-| **Error Rate**       | Medium          | Low                | ✅ 70% improvement  |
-
-## 🔮 Roadmap
-
-- [ ] **Multi-Registry Support**: Support for external registries
-- [ ] **Custom Tags**: Flexible tagging strategies
-- [ ] **Test Integration**: Built-in testing pipeline stages
-- [ ] **Security Scanning**: Automated vulnerability assessment
-- [ ] **Deployment Stages**: Extended pipeline for deployment automation
-
 ---
 
 <div align="center">
