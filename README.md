@@ -3,7 +3,7 @@
 [![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://docker.com)
 [![GitLab](https://img.shields.io/badge/GitLab-FC6D26?style=for-the-badge&logo=gitlab&logoColor=white)](https://gitlab.com)
 [![Bash](https://img.shields.io/badge/Bash-4EAA25?style=for-the-badge&logo=gnu-bash&logoColor=white)](https://gnu.org/software/bash/)
-[![MIT License](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
+[![GPL] License](https://img.shields.io/badge/License-GPL-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/GPL)
 
 > **Automate GitLab CI/CD pipeline generation for multi-service Docker projects with intelligent dependency management and build optimization.**
 
@@ -13,12 +13,12 @@ The `generate-yaml-RAOUL.sh` script automatically analyzes your Docker-based mic
 
 ### Core Capabilities
 
-| Feature | Description | Impact |
-|---------|-------------|---------|
-| 🔍 **Auto-Discovery** | Scans project structure for Docker services | Zero manual configuration |
+| Feature                   | Description                                        | Impact                         |
+| ------------------------- | -------------------------------------------------- | ------------------------------ |
+| 🔍 **Auto-Discovery**     | Scans project structure for Docker services        | Zero manual configuration      |
 | 🧠 **Dependency Mapping** | Analyzes FROM statements to build dependency graph | Correct build order guaranteed |
-| ⚡ **Conditional Builds** | Executes only when changes are detected | Reduced CI/CD costs |
-| 🔄 **Parallel Execution** | Independent services build simultaneously | Faster deployment cycles |
+| ⚡ **Conditional Builds** | Executes only when changes are detected            | Reduced CI/CD costs            |
+| 🔄 **Parallel Execution** | Independent services build simultaneously          | Faster deployment cycles       |
 
 ## 📁 Project Structure
 
@@ -39,6 +39,7 @@ project-root/
 ## 🚀 Quick Start
 
 ### Prerequisites
+
 - GitLab project with Container Registry enabled
 - Docker runners configured
 - Multi-service Docker project structure
@@ -54,6 +55,7 @@ chmod +x generate-yaml-RAOUL.sh
 ```
 
 The script will:
+
 1. **Scan** for services (folders containing `Dockerfile`)
 2. **Analyze** dependency relationships
 3. **Generate** optimized `.gitlab-ci.yml`
@@ -70,11 +72,13 @@ graph LR
 ```
 
 #### Stage 1: `check_base`
+
 - **Purpose**: Detect base image changes using digest comparison
 - **Optimization**: Prevents unnecessary rebuilds
 - **Caching**: Maintains digest cache between pipeline runs
 
 #### Stage 2: `build`
+
 - **Purpose**: Build and push Docker images
 - **Intelligence**: Only executes when changes are detected
 - **Parallelization**: Independent services build concurrently
@@ -107,6 +111,7 @@ COPY . /app
 ### Dependency Resolution
 
 The script automatically:
+
 - **Parses** `FROM` statements in Dockerfiles
 - **Maps** inter-service dependencies
 - **Orders** builds to respect dependency chain
@@ -116,10 +121,10 @@ The script automatically:
 
 ### Environment Variables
 
-| Variable | Purpose | Source |
-|----------|---------|---------|
+| Variable             | Purpose                     | Source             |
+| -------------------- | --------------------------- | ------------------ |
 | `$CI_REGISTRY_IMAGE` | Container registry base URL | GitLab (automatic) |
-| `$CI_JOB_TOKEN` | Authentication token | GitLab (automatic) |
+| `$CI_JOB_TOKEN`      | Authentication token        | GitLab (automatic) |
 
 ### GitLab Requirements
 
@@ -130,11 +135,13 @@ The script automatically:
 ## 🎛️ Advanced Features
 
 ### Cache Management
+
 - **Digest Tracking**: Monitors base image changes
 - **Artifact Persistence**: Maintains state between jobs
 - **Cache Invalidation**: Smart cache refresh strategies
 
 ### Build Optimization
+
 - **Conditional Logic**: Skip unnecessary builds
 - **Resource Efficiency**: Parallel execution where possible
 - **Cost Reduction**: Minimize CI/CD resource usage
@@ -155,6 +162,7 @@ DOCKER_BUILD_ARGS="--build-arg ENV=production"
 ```
 
 ### Integration Possibilities
+
 - **Testing Integration**: Add test stages before build
 - **Security Scanning**: Integrate vulnerability checks
 - **Deployment Automation**: Extend to deployment stages
@@ -168,6 +176,7 @@ DOCKER_BUILD_ARGS="--build-arg ENV=production"
 **Problem**: Script doesn't find services
 
 **Solutions**:
+
 - Verify `Dockerfile` naming (case-sensitive)
 - Check folder structure matches expected pattern
 - Ensure services are in subdirectories
@@ -180,6 +189,7 @@ DOCKER_BUILD_ARGS="--build-arg ENV=production"
 **Problem**: Dependencies not detected correctly
 
 **Solutions**:
+
 - Use standard format: `$CI_REGISTRY_IMAGE/service-name:tag`
 - Match service names to folder names (lowercase)
 - Verify FROM statement syntax
@@ -192,6 +202,7 @@ DOCKER_BUILD_ARGS="--build-arg ENV=production"
 **Problem**: Slow or unnecessary builds
 
 **Solutions**:
+
 - Check cache configuration
 - Verify change detection rules
 - Review runner resource allocation
@@ -202,12 +213,12 @@ DOCKER_BUILD_ARGS="--build-arg ENV=production"
 
 ### Before vs After Implementation
 
-| Metric | Manual Pipeline | Generated Pipeline | Improvement |
-|--------|----------------|-------------------|-------------|
-| **Setup Time** | Hours | Minutes | 🚀 95% reduction |
-| **Build Efficiency** | All services | Changed only | 🎯 60-80% reduction |
-| **Maintenance** | High | Automated | 🛠️ 90% reduction |
-| **Error Rate** | Medium | Low | ✅ 70% improvement |
+| Metric               | Manual Pipeline | Generated Pipeline | Improvement         |
+| -------------------- | --------------- | ------------------ | ------------------- |
+| **Setup Time**       | Hours           | Minutes            | 🚀 95% reduction    |
+| **Build Efficiency** | All services    | Changed only       | 🎯 60-80% reduction |
+| **Maintenance**      | High            | Automated          | 🛠️ 90% reduction    |
+| **Error Rate**       | Medium          | Low                | ✅ 70% improvement  |
 
 ## 🔮 Roadmap
 
@@ -219,14 +230,12 @@ DOCKER_BUILD_ARGS="--build-arg ENV=production"
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the GPL v3 license. See [LICENSE](LICENSE) for more information.
 
 ---
 
 <div align="center">
 
 **Built for DevOps teams who value efficiency and automation**
-
-[Report Issues](https://github.com/username/repo/issues) • [Contributing Guidelines](CONTRIBUTING.md) • [Documentation](docs/)
 
 </div>
